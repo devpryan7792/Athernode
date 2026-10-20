@@ -1,29 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-obsidian-950: #05070a;
-  --color-obsidian-900: #080a0f;
-  --color-obsidian-850: #0d111a;
-  --color-obsidian-800: #111622;
-  --color-obsidian-750: #141b2b;
-  --color-obsidian-700: #182030;
-  --color-obsidian-600: #232d42;
-  --color-obsidian-500: #323f5c;
+  /* Refined Graphite / Neutral Obsidian Architecture (Linear & Vercel precision) */
+  --color-obsidian-950: #09090b;
+  --color-obsidian-900: #0e0f12;
+  --color-obsidian-850: #141519;
+  --color-obsidian-800: #1a1b21;
+  --color-obsidian-750: #22232b;
+  --color-obsidian-700: #2a2b36;
+  --color-obsidian-600: #353745;
+  --color-obsidian-500: #4e5064;
 
-  --color-neon-cyan: #00f2fe;
+  /* Sophisticated Accents - Calibrated for high-contrast clarity without radioactive bloom */
+  --color-neon-cyan: #0ea5e9;
   --color-neon-sky: #38bdf8;
   --color-neon-emerald: #10b981;
   --color-neon-amber: #f59e0b;
-  --color-neon-crimson: #ef4444;
-  --color-neon-violet: #8b5cf6;
+  --color-neon-crimson: #f43f5e;
+  --color-neon-violet: #818cf8;
 
   --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
   --font-sans: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
 
-  --shadow-neon-cyan: 0 0 20px -3px rgba(0, 242, 254, 0.35);
-  --shadow-neon-emerald: 0 0 20px -3px rgba(16, 185, 129, 0.35);
-  --shadow-neon-crimson: 0 0 20px -3px rgba(239, 68, 68, 0.35);
-  --shadow-neon-violet: 0 0 20px -3px rgba(139, 92, 246, 0.35);
+  /* Crisp Structural Elevation (Eliminates tacky fuzzy AI glow blur) */
+  --shadow-neon-cyan: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(14, 165, 233, 0.35);
+  --shadow-neon-emerald: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(16, 185, 129, 0.35);
+  --shadow-neon-crimson: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(244, 63, 94, 0.35);
+  --shadow-neon-violet: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(129, 140, 248, 0.35);
 }
 
 :root {
@@ -48,58 +51,58 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #080a0f;
+  background: #0e0f12;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e2638;
+  background: #2a2b36;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a364f;
+  background: #353745;
 }
 
-/* Glass & Glow Utility Classes */
+/* Glass & Structural Utility Classes */
 .glass-panel {
-  background: rgba(17, 22, 34, 0.75);
+  background: rgba(20, 21, 25, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(35, 45, 66, 0.8);
+  border: 1px solid rgba(53, 55, 69, 0.65);
 }
 
 .glass-modal {
-  background: rgba(13, 17, 26, 0.92);
+  background: rgba(14, 15, 18, 0.94);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(42, 54, 79, 0.9);
+  border: 1px solid rgba(53, 55, 69, 0.85);
 }
 
 .neon-border-cyan {
-  border-color: rgba(0, 242, 254, 0.4);
-  box-shadow: 0 0 15px -3px rgba(0, 242, 254, 0.25);
+  border-color: rgba(14, 165, 233, 0.45);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(14, 165, 233, 0.25);
 }
 
 .neon-border-emerald {
-  border-color: rgba(16, 185, 129, 0.4);
-  box-shadow: 0 0 15px -3px rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(16, 185, 129, 0.25);
 }
 
 .neon-border-crimson {
-  border-color: rgba(239, 68, 68, 0.4);
-  box-shadow: 0 0 15px -3px rgba(239, 68, 68, 0.25);
+  border-color: rgba(244, 63, 94, 0.45);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(244, 63, 94, 0.25);
 }
 
 /* Minecraft Inventory Slot Pattern */
 .mc-slot {
-  background: #141b2b;
-  border: 2px solid #232d42;
-  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.4), inset -2px -2px 0px rgba(255, 255, 255, 0.05);
+  background: #181920;
+  border: 2px solid #2a2b36;
+  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.4), inset -1px -1px 0px rgba(255, 255, 255, 0.05);
 }
 
 .mc-slot:hover {
-  border-color: #00f2fe;
-  background: #1c2438;
+  border-color: #0ea5e9;
+  background: #22232b;
 }
 
 /* xterm terminal container styling */
@@ -107,10 +110,10 @@ body {
   width: 8px;
 }
 .xterm-viewport::-webkit-scrollbar-track {
-  background: #080a0f;
+  background: #0e0f12;
 }
 .xterm-viewport::-webkit-scrollbar-thumb {
-  background: #1e2638;
+  background: #2a2b36;
   border-radius: 4px;
 }
 
