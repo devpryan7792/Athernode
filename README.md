@@ -50,6 +50,7 @@ Built with **React 19**, **TypeScript**, and **Tailwind CSS v4**, operating on a
 
 ```
 Athernode/
+├── package.json                 # Root npm workspace manifest & unified scripts
 ├── apps/
 │   └── web/                     # React 19 + TypeScript Frontend
 │       ├── src/
@@ -77,15 +78,30 @@ Athernode/
 - npm or pnpm
 
 ### Running Locally
+
+You can run commands directly from the root repository or inside `apps/web`:
+
+#### Option 1: Root Workspace (Recommended)
 ```bash
 # Clone the repository
 git clone https://github.com/devpryan7792/Athernode.git
-cd Athernode/apps/web
+cd Athernode
 
-# Install dependencies
+# Install dependencies across all workspaces
 npm install
 
 # Start development server
+npm run dev
+```
+
+#### Option 2: Direct Subdirectory
+```bash
+# Clone and enter the web application
+git clone https://github.com/devpryan7792/Athernode.git
+cd Athernode/apps/web
+
+# Install and run
+npm install
 npm run dev
 ```
 
@@ -93,8 +109,11 @@ Open [http://localhost:5173](http://localhost:5173) in your browser. The applica
 
 ### Building for Production
 ```bash
-cd apps/web
+# From root repository
 npm run build
+
+# Or directly in apps/web
+cd apps/web && npm run build
 ```
 
 ---

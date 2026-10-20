@@ -1,0 +1,27 @@
+{
+  "name": "athernode",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AetherNode - High-performance Minecraft Server & Network Management Platform",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=web",
+    "build": "npm run build --workspace=web",
+    "preview": "npm run preview --workspace=web",
+    "lint": "npm run lint --workspace=web",
+    "web": "npm run dev --workspace=web"
+  },
+  "keywords": [
+    "minecraft",
+    "server-management",
+    "velocity",
+    "pterodactyl",
+    "crafty",
+    "react19",
+    "tailwind"
+  ],
+  "author": "devpryan7792",
+  "license": "MIT"
+}
