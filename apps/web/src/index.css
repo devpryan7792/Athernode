@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian-950: #05070a;
+  --color-obsidian-900: #080a0f;
+  --color-obsidian-850: #0d111a;
+  --color-obsidian-800: #111622;
+  --color-obsidian-750: #141b2b;
+  --color-obsidian-700: #182030;
+  --color-obsidian-600: #232d42;
+  --color-obsidian-500: #323f5c;
+
+  --color-neon-cyan: #00f2fe;
+  --color-neon-sky: #38bdf8;
+  --color-neon-emerald: #10b981;
+  --color-neon-amber: #f59e0b;
+  --color-neon-crimson: #ef4444;
+  --color-neon-violet: #8b5cf6;
+
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  --font-sans: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
+
+  --shadow-neon-cyan: 0 0 20px -3px rgba(0, 242, 254, 0.35);
+  --shadow-neon-emerald: 0 0 20px -3px rgba(16, 185, 129, 0.35);
+  --shadow-neon-crimson: 0 0 20px -3px rgba(239, 68, 68, 0.35);
+  --shadow-neon-violet: 0 0 20px -3px rgba(139, 92, 246, 0.35);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-obsidian-900);
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Obsidian Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2638;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a364f;
+}
+
+/* Glass & Glow Utility Classes */
+.glass-panel {
+  background: rgba(17, 22, 34, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(35, 45, 66, 0.8);
+}
+
+.glass-modal {
+  background: rgba(13, 17, 26, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(42, 54, 79, 0.9);
+}
+
+.neon-border-cyan {
+  border-color: rgba(0, 242, 254, 0.4);
+  box-shadow: 0 0 15px -3px rgba(0, 242, 254, 0.25);
+}
+
+.neon-border-emerald {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 15px -3px rgba(16, 185, 129, 0.25);
+}
+
+.neon-border-crimson {
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 15px -3px rgba(239, 68, 68, 0.25);
+}
+
+/* Minecraft Inventory Slot Pattern */
+.mc-slot {
+  background: #141b2b;
+  border: 2px solid #232d42;
+  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.4), inset -2px -2px 0px rgba(255, 255, 255, 0.05);
+}
+
+.mc-slot:hover {
+  border-color: #00f2fe;
+  background: #1c2438;
+}
+
+/* xterm terminal container styling */
+.xterm-viewport::-webkit-scrollbar {
+  width: 8px;
+}
+.xterm-viewport::-webkit-scrollbar-track {
+  background: #080a0f;
+}
+.xterm-viewport::-webkit-scrollbar-thumb {
+  background: #1e2638;
+  border-radius: 4px;
+}
+
