@@ -987,7 +987,9 @@ export class MockFileService implements IFileService {
     const items: FileItem[] = [];
 
     // Root directory
-    if (directoryPath === '' || directoryPath === '/') {
+    const norm = directoryPath.replace(/\/+$/, '') || '/';
+
+    if (norm === '/') {
       items.push(
         { name: 'config', path: '/config', isDirectory: true, sizeBytes: 4096, modifiedAt: '2026-10-20 12:00' },
         { name: 'mods', path: '/mods', isDirectory: true, sizeBytes: 12288, modifiedAt: '2026-10-20 13:00' },
@@ -997,24 +999,45 @@ export class MockFileService implements IFileService {
         { name: 'server.properties', path: '/server.properties', isDirectory: false, sizeBytes: 840, modifiedAt: '2026-10-20 12:15', extension: 'properties' },
         { name: 'velocity.toml', path: '/velocity.toml', isDirectory: false, sizeBytes: 1240, modifiedAt: '2026-10-20 10:00', extension: 'toml' }
       );
-    } else if (directoryPath.includes('config')) {
-      items.push({
-        name: 'paper-global.yml',
-        path: '/config/paper-global.yml',
-        isDirectory: false,
-        sizeBytes: 1480,
-        modifiedAt: '2026-10-20 12:00',
-        extension: 'yml',
-      });
-    } else if (directoryPath.includes('logs')) {
-      items.push({
-        name: 'latest.log',
-        path: '/logs/latest.log',
-        isDirectory: false,
-        sizeBytes: 34200,
-        modifiedAt: '2026-10-20 13:41',
-        extension: 'log',
-      });
+    } else if (norm === '/config') {
+      items.push(
+        { name: 'paper-global.yml', path: '/config/paper-global.yml', isDirectory: false, sizeBytes: 1480, modifiedAt: '2026-10-20 12:00', extension: 'yml' },
+        { name: 'spigot.yml', path: '/config/spigot.yml', isDirectory: false, sizeBytes: 2150, modifiedAt: '2026-10-20 11:45', extension: 'yml' },
+        { name: 'bukkit.yml', path: '/config/bukkit.yml', isDirectory: false, sizeBytes: 1820, modifiedAt: '2026-10-20 11:40', extension: 'yml' }
+      );
+    } else if (norm === '/mods') {
+      items.push(
+        { name: 'voicechat-fabric-1.21.4-2.5.28.jar', path: '/mods/voicechat-fabric-1.21.4-2.5.28.jar', isDirectory: false, sizeBytes: 4200000, modifiedAt: '2026-10-20 13:00', extension: 'jar' },
+        { name: 'fabric-api-0.115.0.jar', path: '/mods/fabric-api-0.115.0.jar', isDirectory: false, sizeBytes: 3100000, modifiedAt: '2026-10-20 13:00', extension: 'jar' },
+        { name: 'ferritecore-6.1.1-fabric.jar', path: '/mods/ferritecore-6.1.1-fabric.jar', isDirectory: false, sizeBytes: 240000, modifiedAt: '2026-10-20 12:50', extension: 'jar' },
+        { name: 'sodium-fabric-0.6.4.jar', path: '/mods/sodium-fabric-0.6.4.jar', isDirectory: false, sizeBytes: 1800000, modifiedAt: '2026-10-20 12:45', extension: 'jar' }
+      );
+    } else if (norm === '/plugins/FastAsyncWorldEdit') {
+      items.push(
+        { name: 'config.yml', path: '/plugins/FastAsyncWorldEdit/config.yml', isDirectory: false, sizeBytes: 5200, modifiedAt: '2026-10-20 11:35', extension: 'yml' },
+        { name: 'commands.yml', path: '/plugins/FastAsyncWorldEdit/commands.yml', isDirectory: false, sizeBytes: 3100, modifiedAt: '2026-10-20 11:35', extension: 'yml' }
+      );
+    } else if (norm === '/plugins') {
+      items.push(
+        { name: 'worldedit-bukkit-7.3.9.jar', path: '/plugins/worldedit-bukkit-7.3.9.jar', isDirectory: false, sizeBytes: 6200000, modifiedAt: '2026-10-20 11:30', extension: 'jar' },
+        { name: 'LuckPerms-Bukkit-5.4.142.jar', path: '/plugins/LuckPerms-Bukkit-5.4.142.jar', isDirectory: false, sizeBytes: 2100000, modifiedAt: '2026-10-20 11:20', extension: 'jar' },
+        { name: 'FastAsyncWorldEdit', path: '/plugins/FastAsyncWorldEdit', isDirectory: true, sizeBytes: 4096, modifiedAt: '2026-10-20 11:35' }
+      );
+    } else if (norm === '/logs') {
+      items.push(
+        { name: 'latest.log', path: '/logs/latest.log', isDirectory: false, sizeBytes: 34200, modifiedAt: '2026-10-20 13:41', extension: 'log' },
+        { name: 'debug.log', path: '/logs/debug.log', isDirectory: false, sizeBytes: 84200, modifiedAt: '2026-10-20 13:41', extension: 'log' }
+      );
+    } else if (norm === '/world/playerdata') {
+      items.push(
+        { name: '4b3c2a10-9876-4abc-def0-123456789abc.dat', path: '/world/playerdata/4b3c2a10-9876-4abc-def0-123456789abc.dat', isDirectory: false, sizeBytes: 15400, modifiedAt: '2026-10-20 13:41', extension: 'dat' }
+      );
+    } else if (norm === '/world') {
+      items.push(
+        { name: 'playerdata', path: '/world/playerdata', isDirectory: true, sizeBytes: 4096, modifiedAt: '2026-10-20 13:41' },
+        { name: 'level.dat', path: '/world/level.dat', isDirectory: false, sizeBytes: 2140, modifiedAt: '2026-10-20 13:41', extension: 'dat' },
+        { name: 'session.lock', path: '/world/session.lock', isDirectory: false, sizeBytes: 3, modifiedAt: '2026-10-20 10:00', extension: 'lock' }
+      );
     }
 
     return items;
