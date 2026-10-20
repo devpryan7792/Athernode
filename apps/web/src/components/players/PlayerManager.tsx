@@ -140,7 +140,7 @@ export const PlayerManager: React.FC = () => {
       {/* Header bar */}
       <div className="flex items-center justify-between p-4 rounded-xl bg-obsidian-850 border border-obsidian-600">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-lg bg-neon-violet/10 border border-neon-violet/30 text-neon-violet">
+          <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
             <Users className="w-5 h-5" />
           </div>
           <div>
@@ -151,7 +151,7 @@ export const PlayerManager: React.FC = () => {
           </div>
         </div>
 
-        <div className="text-xs font-mono text-neon-violet bg-neon-violet/10 border border-neon-violet/30 px-3 py-1.5 rounded-lg">
+        <div className="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1.5 rounded-lg">
           Online: {players.length} Players
         </div>
       </div>
@@ -322,7 +322,7 @@ export const PlayerManager: React.FC = () => {
                     onClick={() => setActiveTab('enderchest')}
                     className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                       activeTab === 'enderchest'
-                        ? 'bg-neon-violet text-white font-bold'
+                        ? 'bg-emerald-500 text-obsidian-950 font-bold'
                         : 'text-slate-400 hover:text-white'
                     }`}
                   >
@@ -384,7 +384,7 @@ export const PlayerManager: React.FC = () => {
               ) : (
                 /* Ender Chest (27 Slots) */
                 <div className="space-y-2">
-                  <div className="text-xs font-mono uppercase tracking-wider text-neon-violet flex items-center gap-2">
+                  <div className="text-xs font-mono uppercase tracking-wider text-emerald-400 flex items-center gap-2">
                     <Layers className="w-4 h-4" />
                     <span>Ender Chest Storage (27 Slots)</span>
                   </div>
@@ -409,7 +409,7 @@ export const PlayerManager: React.FC = () => {
                 {hoveredSlot.enchantments && hoveredSlot.enchantments.length > 0 && (
                   <div className="pt-1 space-y-0.5">
                     {hoveredSlot.enchantments.map((ench) => (
-                      <div key={ench.id} className="text-xs font-mono text-neon-violet flex items-center gap-1">
+                      <div key={ench.id} className="text-xs font-mono text-emerald-400 flex items-center gap-1">
                         <Sparkles className="w-3 h-3" />
                         <span>{ench.id} {ench.level}</span>
                       </div>

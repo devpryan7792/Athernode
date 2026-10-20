@@ -65,20 +65,17 @@ export const ServerOverview: React.FC = () => {
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
       {/* Hero Control Banner */}
-      <div className="relative rounded-2xl bg-gradient-to-r from-obsidian-850 via-obsidian-800 to-obsidian-850 border border-obsidian-600 p-6 shadow-xl overflow-hidden">
-        {/* Glow ambient background accent */}
-        <div className="absolute -right-20 -top-20 w-80 h-80 bg-neon-cyan/10 rounded-full blur-3xl pointer-events-none" />
-
+      <div className="relative rounded-2xl bg-obsidian-850 border border-obsidian-600 p-6 shadow-xl overflow-hidden">
         <div className="relative flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           {/* Server Identity */}
           <div className="space-y-2">
             <div className="flex items-center gap-3">
-              <span className="px-2.5 py-1 rounded-md text-xs font-mono font-bold uppercase tracking-wider bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan">
+              <span className="px-2.5 py-1 rounded-md text-xs font-mono font-bold uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
                 {server.engine} {server.version}
               </span>
               <span className="text-xs font-mono text-slate-400">Node: {server.node}</span>
               {server.isProxyLinked && (
-                <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-neon-violet/10 border border-neon-violet/30 text-neon-violet">
+                <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-emerald-500/10 border border-emerald-500/25 text-emerald-400">
                   Velocity Routed
                 </span>
               )}
@@ -212,17 +209,17 @@ export const ServerOverview: React.FC = () => {
         {/* Player Sessions */}
         <div
           onClick={() => setActiveTab('players')}
-          className="rounded-xl bg-obsidian-850/80 border border-obsidian-600 p-5 space-y-3 relative overflow-hidden group hover:border-neon-violet/40 cursor-pointer transition-all"
+          className="rounded-xl bg-obsidian-850/80 border border-obsidian-600 p-5 space-y-3 relative overflow-hidden group hover:border-emerald-500/40 cursor-pointer transition-all"
         >
           <div className="flex items-center justify-between text-slate-400">
             <span className="text-xs font-mono uppercase tracking-wider font-semibold">Online Players</span>
-            <Users className="w-4 h-4 text-neon-violet group-hover:scale-110 transition-transform" />
+            <Users className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl font-black font-mono text-white">{server.currentPlayers}</span>
             <span className="text-xs font-mono text-slate-400">/ {server.maxPlayers} Max</span>
           </div>
-          <div className="text-xs font-mono text-neon-violet flex items-center gap-1 group-hover:underline">
+          <div className="text-xs font-mono text-emerald-400 flex items-center gap-1 group-hover:underline">
             <span>Inspect NBT & Inventories</span>
             <ArrowRight className="w-3 h-3" />
           </div>
@@ -233,56 +230,56 @@ export const ServerOverview: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
         <div
           onClick={() => setActiveTab('console')}
-          className="flex items-center justify-between p-4 rounded-xl bg-obsidian-800/60 border border-obsidian-600 hover:border-neon-cyan/50 hover:bg-obsidian-800 cursor-pointer transition-all group"
+          className="flex items-center justify-between p-4 rounded-xl bg-obsidian-800/60 border border-obsidian-600 hover:border-emerald-500/50 hover:bg-obsidian-800 cursor-pointer transition-all group"
         >
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-lg bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan">
+            <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
               <Terminal className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-sm font-semibold text-white group-hover:text-neon-cyan transition-colors">
+              <div className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">
                 Interactive Console
               </div>
               <div className="text-xs text-slate-400">Stream live stdout & issue commands</div>
             </div>
           </div>
-          <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-neon-cyan group-hover:translate-x-1 transition-all" />
+          <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" />
         </div>
 
         <div
           onClick={() => setActiveTab('addons')}
-          className="flex items-center justify-between p-4 rounded-xl bg-obsidian-800/60 border border-obsidian-600 hover:border-neon-cyan/50 hover:bg-obsidian-800 cursor-pointer transition-all group"
+          className="flex items-center justify-between p-4 rounded-xl bg-obsidian-800/60 border border-obsidian-600 hover:border-emerald-500/50 hover:bg-obsidian-800 cursor-pointer transition-all group"
         >
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-lg bg-neon-sky/10 border border-neon-sky/30 text-neon-sky">
+            <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
               <Package className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-sm font-semibold text-white group-hover:text-neon-sky transition-colors">
+              <div className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">
                 Addon Marketplace
               </div>
               <div className="text-xs text-slate-400">One-click Modrinth & CurseForge installer</div>
             </div>
           </div>
-          <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-neon-sky group-hover:translate-x-1 transition-all" />
+          <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" />
         </div>
 
         <div
           onClick={() => setActiveTab('schematics')}
-          className="flex items-center justify-between p-4 rounded-xl bg-obsidian-800/60 border border-obsidian-600 hover:border-neon-violet/50 hover:bg-obsidian-800 cursor-pointer transition-all group"
+          className="flex items-center justify-between p-4 rounded-xl bg-obsidian-800/60 border border-obsidian-600 hover:border-emerald-500/50 hover:bg-obsidian-800 cursor-pointer transition-all group"
         >
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-lg bg-neon-violet/10 border border-neon-violet/30 text-neon-violet">
+            <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
               <Layers className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-sm font-semibold text-white group-hover:text-neon-violet transition-colors">
+              <div className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">
                 WorldEdit Schematics
               </div>
               <div className="text-xs text-slate-400">Inspect 3D dimensions & block palettes</div>
             </div>
           </div>
-          <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-neon-violet group-hover:translate-x-1 transition-all" />
+          <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" />
         </div>
       </div>
     </div>

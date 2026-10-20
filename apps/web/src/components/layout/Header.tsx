@@ -13,19 +13,19 @@ export const Header: React.FC = () => {
       <div className="flex items-center gap-4">
         <button
           onClick={toggleSidebar}
-          className="lg:hidden p-2 rounded-lg bg-obsidian-800 border border-obsidian-600 hover:border-neon-cyan/50 text-slate-300 hover:text-neon-cyan transition-all"
+          className="lg:hidden p-2 rounded-lg bg-obsidian-800 border border-obsidian-600 hover:border-emerald-500/50 text-slate-300 hover:text-emerald-400 transition-all"
         >
           <Menu className="w-5 h-5" />
         </button>
 
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-neon-cyan/20 to-neon-violet/20 border border-neon-cyan/40 flex items-center justify-center shadow-neon-cyan">
-            <Radio className="w-4 h-4 text-neon-cyan animate-pulse" />
+          <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
+            <Radio className="w-4 h-4 text-emerald-400 animate-pulse" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-black text-lg tracking-wider text-white">AETHER<span className="text-neon-cyan">NODE</span></span>
-              <span className="px-1.5 py-0.5 text-[10px] font-mono tracking-widest font-semibold rounded bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan">
+              <span className="font-black text-lg tracking-wider text-white">AETHER<span className="text-emerald-400">NODE</span></span>
+              <span className="px-1.5 py-0.5 text-[10px] font-mono tracking-widest font-semibold rounded bg-emerald-500/10 border border-emerald-500/25 text-emerald-400">
                 v1.0-RC
               </span>
             </div>
@@ -40,7 +40,7 @@ export const Header: React.FC = () => {
       <div className="flex items-center gap-3">
         <div className="relative group">
           <div className="flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-obsidian-800 border border-obsidian-600 hover:border-obsidian-500 cursor-pointer transition-all">
-            <Server className="w-4 h-4 text-neon-sky" />
+            <Server className="w-4 h-4 text-emerald-400" />
             <select
               value={activeServerId || ''}
               onChange={(e) => setActiveServerId(e.target.value)}
@@ -88,7 +88,7 @@ export const Header: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-2.5 pl-2 border-l border-obsidian-600">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-obsidian-700 to-obsidian-600 border border-obsidian-500 flex items-center justify-center text-xs font-bold text-neon-cyan shadow-sm">
+          <div className="w-8 h-8 rounded-full bg-obsidian-750 border border-obsidian-600 flex items-center justify-center text-xs font-bold text-emerald-400 shadow-sm">
             AD
           </div>
           <div className="hidden sm:block text-left">

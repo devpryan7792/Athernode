@@ -11,22 +11,22 @@
   --color-obsidian-600: #353745;
   --color-obsidian-500: #4e5064;
 
-  /* Sophisticated Accents - Calibrated for high-contrast clarity without radioactive bloom */
-  --color-neon-cyan: #0ea5e9;
-  --color-neon-sky: #38bdf8;
+  /* Sophisticated Emerald & Jade Architecture (Supabase / Mintlify style) */
+  --color-neon-cyan: #10b981;
+  --color-neon-sky: #34d399;
   --color-neon-emerald: #10b981;
   --color-neon-amber: #f59e0b;
   --color-neon-crimson: #f43f5e;
-  --color-neon-violet: #818cf8;
+  --color-neon-violet: #059669;
 
   --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
   --font-sans: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
 
-  /* Crisp Structural Elevation (Eliminates tacky fuzzy AI glow blur) */
-  --shadow-neon-cyan: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(14, 165, 233, 0.35);
+  /* Crisp Structural Elevation (Emerald/Jade precision) */
+  --shadow-neon-cyan: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(16, 185, 129, 0.35);
   --shadow-neon-emerald: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(16, 185, 129, 0.35);
   --shadow-neon-crimson: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(244, 63, 94, 0.35);
-  --shadow-neon-violet: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(129, 140, 248, 0.35);
+  --shadow-neon-violet: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(5, 150, 105, 0.35);
 }
 
 :root {
@@ -79,8 +79,8 @@ body {
 }
 
 .neon-border-cyan {
-  border-color: rgba(14, 165, 233, 0.45);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(14, 165, 233, 0.25);
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(16, 185, 129, 0.25);
 }
 
 .neon-border-emerald {
@@ -101,7 +101,7 @@ body {
 }
 
 .mc-slot:hover {
-  border-color: #0ea5e9;
+  border-color: #10b981;
   background: #22232b;
 }
 

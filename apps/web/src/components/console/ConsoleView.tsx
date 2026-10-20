@@ -31,10 +31,10 @@ export const ConsoleView: React.FC = () => {
       fontSize: 13,
       fontFamily: 'JetBrains Mono, Fira Code, monospace',
       theme: {
-        background: '#080a0f',
+        background: '#0e0f12',
         foreground: '#e2e8f0',
-        cursor: '#00f2fe',
-        selectionBackground: 'rgba(0, 242, 254, 0.3)',
+        cursor: '#10b981',
+        selectionBackground: 'rgba(16, 185, 129, 0.3)',
         black: '#111622',
         red: '#ef4444',
         green: '#10b981',

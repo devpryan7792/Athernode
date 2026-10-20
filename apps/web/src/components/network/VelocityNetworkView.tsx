@@ -73,15 +73,15 @@ export const VelocityNetworkView: React.FC = () => {
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
       {/* Network Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 rounded-2xl bg-gradient-to-r from-obsidian-850 to-obsidian-800 border border-obsidian-600 shadow-xl">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 rounded-2xl bg-obsidian-850 border border-obsidian-600 shadow-xl">
         <div className="flex items-center gap-3.5">
-          <div className="w-12 h-12 rounded-xl bg-neon-violet/15 border border-neon-violet/30 flex items-center justify-center text-neon-violet shadow-neon-violet">
+          <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
             <Network className="w-6 h-6" />
           </div>
           <div>
             <div className="flex items-center gap-2">
               <h2 className="text-xl font-bold text-white tracking-tight">Velocity Network Mesh</h2>
-              <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-neon-emerald/15 border border-neon-emerald/30 text-neon-emerald">
+              <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
                 MODERN FORWARDING ACTIVE
               </span>
             </div>
@@ -93,7 +93,7 @@ export const VelocityNetworkView: React.FC = () => {
 
         <div className="flex items-center gap-2 text-xs font-mono">
           <span className="text-slate-400">Proxy Gateway:</span>
-          <span className="text-neon-cyan font-bold bg-obsidian-900 px-3 py-1.5 rounded-lg border border-obsidian-700">
+          <span className="text-emerald-400 font-bold bg-obsidian-900 px-3 py-1.5 rounded-lg border border-obsidian-700">
             0.0.0.0:{config.bindPort}
           </span>
         </div>
@@ -102,19 +102,19 @@ export const VelocityNetworkView: React.FC = () => {
       {/* Visual Network Topology Canvas */}
       <div className="rounded-2xl border border-obsidian-600 bg-obsidian-950 p-6 shadow-2xl relative overflow-hidden">
         <div className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-6 flex items-center gap-2">
-          <ShieldCheck className="w-4 h-4 text-neon-violet" />
+          <ShieldCheck className="w-4 h-4 text-emerald-400" />
           <span>Interactive Server Routing Topology</span>
         </div>
 
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 py-4">
           {/* Velocity Master Gateway Node */}
-          <div className="w-full lg:w-72 p-5 rounded-2xl bg-obsidian-850 border-2 border-neon-violet/50 shadow-neon-violet flex flex-col items-center text-center space-y-3">
-            <div className="p-3 rounded-xl bg-neon-violet/20 border border-neon-violet/40 text-neon-violet">
+          <div className="w-full lg:w-72 p-5 rounded-2xl bg-obsidian-850 border-2 border-emerald-500/40 shadow-sm flex flex-col items-center text-center space-y-3">
+            <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
               <Network className="w-7 h-7" />
             </div>
             <div>
               <div className="text-base font-bold text-white">{config.proxyName}</div>
-              <div className="text-xs font-mono text-neon-violet">Gateway Proxy (Velocity 3.3.0)</div>
+              <div className="text-xs font-mono text-emerald-400">Gateway Proxy (Velocity 3.3.0)</div>
             </div>
             <div className="px-3 py-1 rounded-full bg-obsidian-900 border border-obsidian-700 text-xs font-mono text-slate-300">
               Port: {config.bindPort} | Forwarding: Modern
@@ -123,8 +123,8 @@ export const VelocityNetworkView: React.FC = () => {
 
           {/* Connection Divider Arrow */}
           <div className="hidden lg:flex flex-col items-center gap-1 text-slate-500 font-mono text-xs">
-            <div className="w-16 h-0.5 bg-gradient-to-r from-neon-violet to-neon-cyan" />
-            <ArrowRight className="w-5 h-5 text-neon-cyan" />
+            <div className="w-16 h-0.5 bg-emerald-500/40" />
+            <ArrowRight className="w-5 h-5 text-emerald-400" />
             <span>HMAC Tunnel</span>
           </div>
 
@@ -204,7 +204,7 @@ export const VelocityNetworkView: React.FC = () => {
         {/* Cross-Network Player Dispatcher */}
         <div className="p-5 rounded-2xl bg-obsidian-850 border border-obsidian-600 space-y-4">
           <div className="flex items-center gap-2.5 text-white font-bold text-sm">
-            <Send className="w-4 h-4 text-neon-violet" />
+            <Send className="w-4 h-4 text-emerald-400" />
             <span>Cross-Server Player Dispatcher (/send)</span>
           </div>
 
@@ -219,7 +219,7 @@ export const VelocityNetworkView: React.FC = () => {
                 type="text"
                 value={dispatchPlayer}
                 onChange={(e) => setDispatchPlayer(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl bg-obsidian-900 border border-obsidian-700 text-xs font-mono text-white outline-none focus:border-neon-violet"
+                className="w-full px-3 py-2 rounded-xl bg-obsidian-900 border border-obsidian-700 text-xs font-mono text-white outline-none focus:border-emerald-500"
               />
             </div>
 
@@ -240,7 +240,7 @@ export const VelocityNetworkView: React.FC = () => {
 
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-neon-violet text-white hover:bg-purple-600 text-xs font-bold uppercase tracking-wider shadow-neon-violet transition-all cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-500 text-obsidian-950 hover:bg-emerald-400 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
             >
               <CheckCircle2 className="w-4 h-4" />
               <span>Dispatch Player Transfer</span>

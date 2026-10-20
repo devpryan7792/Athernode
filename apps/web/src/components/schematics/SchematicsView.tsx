@@ -65,7 +65,7 @@ export const SchematicsView: React.FC = () => {
       {/* Header bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-xl bg-obsidian-850 border border-obsidian-600">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-lg bg-neon-violet/10 border border-neon-violet/30 text-neon-violet">
+          <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
             <Layers className="w-5 h-5" />
           </div>
           <div>
@@ -77,7 +77,7 @@ export const SchematicsView: React.FC = () => {
         </div>
 
         {/* Upload Button */}
-        <label className="flex items-center gap-2 px-4 py-2 rounded-xl bg-neon-violet text-white hover:bg-purple-600 text-xs font-bold uppercase tracking-wider shadow-neon-violet transition-all cursor-pointer">
+        <label className="flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 text-obsidian-950 hover:bg-emerald-400 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer">
           <UploadCloud className="w-4 h-4" />
           <span>Upload Schematic</span>
           <input
@@ -100,13 +100,13 @@ export const SchematicsView: React.FC = () => {
             <div className="flex items-start justify-between gap-3">
               <div>
                 <h3 className="text-base font-bold text-white flex items-center gap-2">
-                  <Box className="w-4 h-4 text-neon-violet" />
+                  <Box className="w-4 h-4 text-emerald-400" />
                   <span>{schem.name}</span>
                 </h3>
                 <div className="text-xs font-mono text-slate-400 mt-0.5">{schem.filename}</div>
               </div>
 
-              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-neon-violet/15 border border-neon-violet/30 text-neon-violet">
+              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
                 {schem.format}
               </span>
             </div>
@@ -151,11 +151,11 @@ export const SchematicsView: React.FC = () => {
                     key={b.block}
                     className={`h-full ${
                       idx === 0
-                        ? 'bg-neon-cyan'
+                        ? 'bg-emerald-400'
                         : idx === 1
-                        ? 'bg-neon-sky'
+                        ? 'bg-emerald-500'
                         : idx === 2
-                        ? 'bg-neon-violet'
+                        ? 'bg-emerald-600'
                         : 'bg-slate-600'
                     }`}
                     style={{ width: `${b.percentage}%` }}

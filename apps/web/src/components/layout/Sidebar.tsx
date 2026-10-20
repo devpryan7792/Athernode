@@ -83,11 +83,11 @@ export const Sidebar: React.FC = () => {
               onClick={() => setActiveTab(item.id)}
               className={`w-full flex items-center gap-3.5 px-3.5 py-3 rounded-xl font-medium text-sm transition-all duration-200 group relative ${
                 isActive
-                  ? 'bg-obsidian-800 text-neon-cyan border border-neon-cyan/30 shadow-neon-cyan'
+                  ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
                   : 'text-slate-400 hover:text-slate-200 hover:bg-obsidian-850/80 border border-transparent'
               }`}
             >
-              <span className={`${isActive ? 'text-neon-cyan' : 'text-slate-400 group-hover:text-neon-cyan transition-colors'}`}>
+              <span className={`${isActive ? 'text-emerald-400' : 'text-slate-400 group-hover:text-emerald-400 transition-colors'}`}>
                 {item.icon}
               </span>
 
@@ -101,7 +101,7 @@ export const Sidebar: React.FC = () => {
                 <span
                   className={`px-1.5 py-0.5 text-[10px] font-mono font-semibold rounded ${
                     isActive
-                      ? 'bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/40'
+                      ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
                       : 'bg-obsidian-700 text-slate-400 group-hover:text-slate-300'
                   }`}
                 >
@@ -111,7 +111,7 @@ export const Sidebar: React.FC = () => {
 
               {/* Active Indicator Bar */}
               {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1 bg-neon-cyan rounded-r shadow-neon-cyan" />
+                <span className="absolute left-0 top-2 bottom-2 w-1 bg-emerald-500 rounded-r shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
               )}
             </button>
           );
