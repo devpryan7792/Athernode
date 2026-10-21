@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useServerStore, useUiStore } from '../../stores';
 import { playerService } from '../../services';
 import type { PlayerData, InventorySlot } from '../../types';
@@ -27,11 +27,7 @@ export const PlayerManager: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'inventory' | 'enderchest'>('inventory');
   const [hoveredSlot, setHoveredSlot] = useState<InventorySlot | null>(null);
 
-  useEffect(() => {
-    loadPlayers();
-  }, [server?.id]);
-
-  const loadPlayers = async () => {
+  const loadPlayers = useCallback(async () => {
     if (!server) return;
     try {
       const list = await playerService.getOnlinePlayers(server.id);
@@ -39,7 +35,11 @@ export const PlayerManager: React.FC = () => {
     } catch {
       addToast('Error', 'Failed to load player sessions', 'error');
     }
-  };
+  }, [server, addToast]);
+
+  useEffect(() => {
+    loadPlayers();
+  }, [loadPlayers]);
 
   const handleKick = async (player: PlayerData) => {
     if (!server) return;

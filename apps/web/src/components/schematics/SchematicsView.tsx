@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useServerStore, useUiStore } from '../../stores';
 import { schematicService } from '../../services';
 import type { SchematicItem } from '../../types';
@@ -20,11 +20,7 @@ export const SchematicsView: React.FC = () => {
   const [schematics, setSchematics] = useState<SchematicItem[]>([]);
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
-  useEffect(() => {
-    loadSchematics();
-  }, [server?.id]);
-
-  const loadSchematics = async () => {
+  const loadSchematics = useCallback(async () => {
     if (!server) return;
     try {
       const list = await schematicService.listSchematics(server.id);
@@ -32,7 +28,11 @@ export const SchematicsView: React.FC = () => {
     } catch {
       addToast('Error', 'Failed to load schematics', 'error');
     }
-  };
+  }, [server, addToast]);
+
+  useEffect(() => {
+    loadSchematics();
+  }, [loadSchematics]);
 
   const handleCopyCommand = (name: string, id: string) => {
     navigator.clipboard.writeText(`//schem load ${name}`);

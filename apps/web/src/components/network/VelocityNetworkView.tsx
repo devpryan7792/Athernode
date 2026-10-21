@@ -22,17 +22,16 @@ export const VelocityNetworkView: React.FC = () => {
   const [dispatchTarget, setDispatchTarget] = useState('srv-fabric-tech');
 
   useEffect(() => {
+    const loadNetwork = async () => {
+      try {
+        const cfg = await velocityService.getNetworkConfig();
+        setConfig(cfg);
+      } catch {
+        addToast('Error', 'Failed to load Velocity network configuration', 'error');
+      }
+    };
     loadNetwork();
-  }, []);
-
-  const loadNetwork = async () => {
-    try {
-      const cfg = await velocityService.getNetworkConfig();
-      setConfig(cfg);
-    } catch {
-      addToast('Error', 'Failed to load Velocity network configuration', 'error');
-    }
-  };
+  }, [addToast]);
 
   const handleRegenerateSecret = async () => {
     if (!config) return;

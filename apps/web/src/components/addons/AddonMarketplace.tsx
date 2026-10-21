@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
 import { useServerStore, useUiStore } from '../../stores';
 import { addonService } from '../../services';
@@ -35,11 +35,7 @@ export const AddonMarketplace: React.FC = () => {
   // Dependency Resolution Modal State
   const [resolvingAddon, setResolvingAddon] = useState<UnifiedAddon | null>(null);
 
-  useEffect(() => {
-    loadAddons();
-  }, [activeTab, provider, selectedLoader, selectedVersion]);
-
-  const loadAddons = async () => {
+  const loadAddons = useCallback(async () => {
     setIsLoading(true);
     try {
       const results = await addonService.searchAddons({
@@ -55,7 +51,11 @@ export const AddonMarketplace: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [activeTab, provider, selectedLoader, selectedVersion, searchQuery, addToast]);
+
+  useEffect(() => {
+    loadAddons();
+  }, [loadAddons]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();

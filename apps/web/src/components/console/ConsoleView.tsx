@@ -101,7 +101,7 @@ export const ConsoleView: React.FC = () => {
       term.dispose();
       xtermInstance.current = null;
     };
-  }, [server?.id, autoScroll]);
+  }, [server, autoScroll]);
 
   const handleSendCommand = async (cmdToSend?: string) => {
     const cmd = cmdToSend !== undefined ? cmdToSend : inputCommand;

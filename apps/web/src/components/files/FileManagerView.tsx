@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Editor from '@monaco-editor/react';
 import { useServerStore, useUiStore } from '../../stores';
 import { fileService } from '../../services';
@@ -27,11 +27,18 @@ export const FileManagerView: React.FC = () => {
   const [isSaving, setIsSaving] = useState(false);
   const [isLoadingFiles, setIsLoadingFiles] = useState(false);
 
-  useEffect(() => {
-    loadDirectory(currentPath);
-  }, [server?.id, currentPath]);
+  const loadFile = useCallback(async (item: FileItem) => {
+    if (!server) return;
+    setSelectedFile(item);
+    try {
+      const content = await fileService.readFile(server.id, item.path);
+      setFileContent(content);
+    } catch {
+      addToast('Error', `Failed to open ${item.name}`, 'error');
+    }
+  }, [server, addToast]);
 
-  const loadDirectory = async (path: string) => {
+  const loadDirectory = useCallback(async (path: string) => {
     if (!server) return;
     setIsLoadingFiles(true);
     try {
@@ -49,18 +56,11 @@ export const FileManagerView: React.FC = () => {
     } finally {
       setIsLoadingFiles(false);
     }
-  };
+  }, [server, selectedFile, loadFile, addToast]);
 
-  const loadFile = async (item: FileItem) => {
-    if (!server) return;
-    setSelectedFile(item);
-    try {
-      const content = await fileService.readFile(server.id, item.path);
-      setFileContent(content);
-    } catch {
-      addToast('Error', `Failed to open ${item.name}`, 'error');
-    }
-  };
+  useEffect(() => {
+    loadDirectory(currentPath);
+  }, [loadDirectory, currentPath]);
 
   const handleSaveFile = async () => {
     if (!server || !selectedFile) return;
