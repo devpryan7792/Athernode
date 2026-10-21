@@ -108,3 +108,11 @@ We purged all generic AI cyberpunk blue and purple gradients and replaced them w
 2. **Deep Charcoal Matrix Canvas**: Base canvas set to deep obsidian zinc (`#09090b` / `#0e0f12`), with matte surface containers and zero fuzzy background blur glows.
 3. **High-Contrast Terminal Emerald Accent**: Action buttons, active indicators, live telemetry stats, and routing topology use high-contrast Emerald (`#10b981`) and Mint (`#34d399`).
 4. **Verified via Chrome CDP**: Screen-tested across Overview, Velocity Mesh, Addon Marketplace, Console, and Schematics views. All builds pass with 0 errors.
+
+---
+
+### 7. Cross-Platform Native Binding Resolution (macOS / Apple Silicon)
+Resolved NPM CLI bug [#4828](https://github.com/npm/cli/issues/4828) where lockfiles generated on Linux omit platform-specific native binary dependencies when cloned onto macOS Apple Silicon (`darwin-arm64`):
+1. **Explicit `optionalDependencies`**: Registered multi-platform Rolldown native bindings (`@rolldown/binding-darwin-arm64`, `@rolldown/binding-darwin-x64`, `@rolldown/binding-linux-x64-gnu`, `@rolldown/binding-win32-x64-msvc`) in `apps/web/package.json` and root `package.json`.
+2. **Untracked Poisoned Lockfile**: Removed single-platform `package-lock.json` from git and added it to `.gitignore` so each developer environment generates clean native bindings matching their host architecture.
+3. **Verified Local Build**: Executed production build (`npm run build`) cleanly in 714ms with zero errors.
